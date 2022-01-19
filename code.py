@@ -43,21 +43,21 @@ from urllib import request, parse
 
 
 TWILIO_SMS_URL = "https://api.twilio.com/2010-04-01/Accounts/{}/Messages.json"
-TWILIO_ACCOUNT_SID = "AC0544e33a860d2b6ad3a955a1af9f5e23"
-TWILIO_AUTH_TOKEN = "4e42fcc5011d3d365fbacf00f3ae5c2e"
+TWILIO_ACCOUNT_SID = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+TWILIO_AUTH_TOKEN = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
 
 def lambda_handler(event, context):
     respose={"dialogAction":{"type":"Close","fulfillmentState":"Fulfilled","message":{"contentType":"PlainText"}}}
     to_number=''
     if str(event["currentIntent"]["slots"]["mn"])=="+918328259947":
-        to_number='+918328259947'
+        to_number='xxxxxxxxxxxxxxxx'
         print("hi")
     elif str(event["currentIntent"]["slots"]["mn"])=="+919704193380":
-        to_number='+919704193380'
+        to_number='xxxxxxxxxxxxxxxxx'
         print("hello")
     print("to number = "+to_number)
-    from_number = '+19377499896'
+    from_number = 'xxxxxxxxxxxxxx'
     print("from number = "+from_number)
     body = 'please download the ID card from this www.google.com'
     
@@ -97,9 +97,22 @@ def lambda_handler(event, context):
         respose['dialogAction']['message']['content'] = e
     
     return respose
+
+-----------------Test case-------------------
+{
+  "currentIntent": {
+    "name": "smsservice",
+    "slots": {
+      "mn": "+918328259947"
+    },
+    "slotDetails": {
+      "mn": "+918328259947"
+    }
+  }
+}
 -------------------------------------------------------------------------------------------------------
 email bot
-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
 var aws = require("aws-sdk");
 var ses = new aws.SES({ region: "us-east-1" });
 
@@ -142,5 +155,19 @@ function log(event){
     };
     return response
 }
----------------------------------------------------------------------------------------------
+
+
+-------------------testcase----------------------
+{
+  "currentIntent": {
+    "name": "emailservice",
+    "slots": {
+      "em": "varaprasad239@gmail.com"
+    },
+    "slotDetails": {
+      "em": "varaprasad239@gmail.com"
+    }
+  }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
 
