@@ -134,27 +134,32 @@ exports.handler = async function (event) {
     Source: "eliveprasad@gmail.com"
   };
   
-   const result =await log(event)
-return ses.sendEmail(params).promise()
-
- 
-};
-
-function log(event){
-  
-  let response = {
+  const  k=await sms(event,params);
+   var response = {
         sessionAttributes: event.sessionAttributes,
         dialogAction: {
             type: "Close",
             fulfillmentState: "Fulfilled",
             message: {
                 "contentType": "PlainText",
-                "content": "email sent sucessfully"
+                "content": "Email send Successfully"
             }
         }
     };
-    return response
+    
+   
+    return response;
+    
+    
+};
+
+function sms(event,params){
+  return ses.sendEmail(params).promise();
+  
 }
+
+
+
 
 
 -------------------testcase----------------------
