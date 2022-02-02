@@ -181,3 +181,15 @@ Working page of visual salesforce is
 <apex:page sidebar="false" >
     <apex:iframe height="400" width="300" src="https://d13qqkftmzwn75.cloudfront.net/" scrolling="true"/>
 </apex:page>
+    
+    
+--------------------------------------------------------------------
+cross acccount access for the s3 bucket
+---------------------------------------------------------------------
+https://www.youtube.com/watch?v=mxRnQDw3qUI
+    
+--------------------------------------------------------------------
+Visual indicator setup
+--------------------------------------------------------------------
+https://www.youtube.com/watch?v=dhB0Srs5eAk
+
